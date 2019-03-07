@@ -7,10 +7,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  * Created by wwclr on 2019/3/4.
  */
 public class Student {
-    @JsonIgnore
+
     private String userId;
     private String name;
-    @JsonInclude
     private Integer age;
 
     public Student() {
