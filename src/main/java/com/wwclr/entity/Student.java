@@ -1,4 +1,4 @@
-package com.wwclr.controller.entity;
+package com.wwclr.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;

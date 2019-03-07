@@ -1,4 +1,4 @@
-package com.wwclr.controller.dao;
+package com.wwclr.dao;
 
 /**
  * Created by wwclr on 2019/3/4.

@@ -1,4 +1,4 @@
-package com.wwclr.controller.entity;
+package com.wwclr.entity;
 
 /**
  * Created by wwclr on 2019/3/5.
