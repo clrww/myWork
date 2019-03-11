@@ -1,7 +1,9 @@
 package com.wwclr.server;
 
+import com.wwclr.entity.Resource;
 import com.wwclr.entity.Student;
-import org.springframework.util.StringUtils;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,37 +17,27 @@ import java.util.concurrent.Executors;
 @RestController  //这个=controller+responsebody
 @RequestMapping("/student")
 public class helloController {
-    private static ExecutorService executorService=new ExecuterRegiste().getExecutor(Executors.newFixedThreadPool(2));
+    //private static ExecutorService executorService=new ExecuterRegiste().getExecutor(Executors.newFixedThreadPool(2));
     private static Student student1;
     private static int jj=0;
-//    public helloController(){
-//        if(StringUtils.isEmpty(executorService)){
-//            executorService=new ExecuterRegiste().getExecutor(Executors.newFixedThreadPool(1));
-//        }
-//    }
 
-    @RequestMapping("/hello")
-//    @ResponseBody
-    public Student sayHello(){
-        executorService.execute(new Runnable() {
-            @Override
-            public void run() {
-                for (int i = 0; i < 10; i++) {
-                    System.out.println(i);
-                }
-            }
-        });
-        return student1;
+    @Autowired
+    private Resource resource;
 
+    @RequestMapping("/hello5")
+    public String getResource(){
+        Resource bean=new Resource();
+        BeanUtils.copyProperties(resource, bean);
+        return  bean.toString();
     }
+
+
 
 
     @RequestMapping("/hello1")
 //    @ResponseBody
        public Student sayHello1(){
-
-        Student student2 = new Student("123", "wangwu2", jj++);
-        System.out.println(jj);
+        Student student2 = new Student("123", "wangwu2", 1200);
         return student2;
 
     }

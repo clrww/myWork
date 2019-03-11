@@ -34,6 +34,32 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!--热部署jar-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!--读取静态资源文件jar-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!--引入freemarker模板依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>ssdev</groupId>-->
+            <!--<artifactId>ssdev-mvc</artifactId>-->
+            <!--<version>3.4.0.Alaska-SNAPSHOT</version>-->
+        <!--</dependency>-->
     </dependencies>
 
     <build>
