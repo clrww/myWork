@@ -3,6 +3,8 @@ package com.wwclr.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+import java.util.Date;
+
 /**
  * Created by wwclr on 2019/3/4.
  */
@@ -11,14 +13,33 @@ public class Student {
     private String userId;
     private String name;
     private Integer age;
+    private Date birthday;
+    private String des;
+
+    public String getDes() {
+        return des;
+    }
+
+    public void setDes(String des) {
+        this.des = des;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
 
     public Student() {
     }
 
-    public Student(String userId, String name, Integer age) {
+    public Student(String userId, String name, Integer age,Date birthday) {
         this.userId = userId;
         this.name = name;
         this.age = age;
+        this.birthday=birthday;
     }
 
     public String getUserId() {

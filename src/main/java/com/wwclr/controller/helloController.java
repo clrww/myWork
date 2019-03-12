@@ -1,5 +1,6 @@
-package com.wwclr.server;
+package com.wwclr.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.wwclr.entity.Resource;
 import com.wwclr.entity.Student;
 import org.springframework.beans.BeanUtils;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -28,7 +30,7 @@ public class helloController {
     public String getResource(){
         Resource bean=new Resource();
         BeanUtils.copyProperties(resource, bean);
-        return  bean.toString();
+        return  JSONObject.toJSONString(bean);
     }
 
 
@@ -37,7 +39,7 @@ public class helloController {
     @RequestMapping("/hello1")
 //    @ResponseBody
        public Student sayHello1(){
-        Student student2 = new Student("123", "wangwu2", 1200);
+        Student student2 = new Student("123", "wangwu2", 12000,new Date());
         return student2;
 
     }
@@ -45,7 +47,7 @@ public class helloController {
     @RequestMapping("/hello2")
 //    @ResponseBody
     public Student sayHello2(){
-        Student student3 = new Student("123", "wangwu2",  jj++);
+        Student student3 = new Student("123", "wangwu2",  jj++,new Date());
         System.out.println(jj);
         return student3;
 

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Created by wwclr on 2019/3/11.
  */
-@RestController
+@Controller
 @RequestMapping("/ftl")
 public class FreeMarkerController {
     @Autowired
@@ -19,10 +19,10 @@ public class FreeMarkerController {
     @RequestMapping("/index")
     public String index(ModelMap modelMap){
         modelMap.addAttribute("resource",resource);
-        return "templates/freemarker/index";
+        return "index";
     }
     @RequestMapping("/center")
     public String center(){
-        return  "templates/freemarker/center/center";
+        return  "center/center";
     }
 }
