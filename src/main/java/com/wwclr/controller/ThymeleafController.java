@@ -25,7 +25,7 @@ public class ThymeleafController {
         @RequestMapping("/student")
         public String student(ModelMap modelMap){
                 modelMap.addAttribute("name","wangwu");
-                Student student=new Student("123","wang6",18,new Date());
+                Student student=new Student("123","supermanager",18,new Date());
                 Student student1=new Student("456","wang6",28,new Date());
                 Student student2=new Student("789","wang7",38,new Date());
                 student.setDes("<h1 style='color: green'>hello everyone</h1>");
