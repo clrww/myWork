@@ -1,6 +1,10 @@
 package com.wwclr.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.wwclr.entity.Student;
+import net.sf.json.util.JSONUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +20,8 @@ import java.util.List;
 @Controller
 @RequestMapping("/th")
 public class ThymeleafController {
+        private static final Logger logger = LoggerFactory.getLogger(ThymeleafController.class);
+
 
         @RequestMapping("/index")
         public String index(ModelMap modelMap){
@@ -35,6 +41,7 @@ public class ThymeleafController {
                 list.add(student2);
                 modelMap.addAttribute("studentList",list);
                 modelMap.addAttribute("student",student);
+                logger.info("ThymeleafController student {}", JSONObject.toJSONString(student));
                 return "thymeleaf/student";
         }
 
